@@ -27,7 +27,7 @@ const opts = {
     theme: {
         themes: {
             light: {
-                background: '#cccccc',
+                background: '#F6F6F7',
                 primary: '#3f51b5',
                 secondary: '#b0bec5',
                 accent: '#8c9eff',
@@ -47,7 +47,7 @@ const opts = {
                 success: '#4caf50',
             }
         },
-        dark: true,
+        light: true,
     },
 }
 
