@@ -1,10 +1,10 @@
 <template>
  <nav>
-   <v-tabs :width="width" background-color="transparent">
-     <v-tab class="custom-transform-class text-none">Generator</v-tab>
-     <v-tab class="custom-transform-class text-none">Settings</v-tab>
-     <v-tab class="custom-transform-class text-none">Instruction</v-tab>
-     <v-tab class="custom-transform-class text-none">Other apps</v-tab>
+   <v-tabs :width="width" background-color="transparent" class="navi-tabs">
+     <v-tab>Generator</v-tab>
+     <v-tab>Settings</v-tab>
+     <v-tab>Instruction</v-tab>
+     <v-tab>Other apps</v-tab>
    </v-tabs>
  </nav>
 </template>
@@ -29,7 +29,8 @@ export default {
 </script>
 
 <style scoped lang="sass">
-  .text-none{
-    text-transform: capitalize
-    }
+  .navi-tabs{
+    margin-bottom: 30px;
+    letter-spacing: normal;
+  }
 </style>

@@ -1,6 +1,6 @@
 <template>
  <v-app>
-   <v-container class="container">
+   <v-container class="container-custom-main">
      <AppNavigation />
      <AppGenerator />
    </v-container>
@@ -26,8 +26,9 @@
 
 <style style scoped lang="scss">
 
-.container {
+.container-custom-main {
   padding: 30px;
+  max-width: 934px;
 }
 
 </style>
