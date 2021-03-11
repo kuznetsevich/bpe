@@ -2,7 +2,7 @@
  <nav>
    <v-tabs :width="width" background-color="transparent" class="navi-tabs">
      <v-tab>Generator</v-tab>
-     <v-tab>Settings</v-tab>
+     <v-tab>Tasks</v-tab>
      <v-tab>Instruction</v-tab>
      <v-tab>Other apps</v-tab>
    </v-tabs>

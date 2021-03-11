@@ -27,8 +27,10 @@
 <style style scoped lang="scss">
 
 .container-custom-main {
-  padding: 30px;
   max-width: 934px;
+  padding-right: 3.2rem;
+  padding-left: 3.2rem;
+  padding-top: 1.6rem;
 }
 
 </style>
