@@ -1,6 +1,45 @@
 <template>
   <v-container>
-    <v-sheet class="sheet-custom"
+    <v-layout column>
+      <v-flex d-flex xs12>
+        <v-col
+          class="d-flex"
+          cols="12"
+          sm="4"
+        >
+          <div class="if-notes">
+            <h6 class="title">IF</h6>
+            <p class="if-description caption">
+              Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.
+            </p>
+          </div>
+
+        </v-col>
+        <v-spacer></v-spacer>
+        <v-col
+            class="d-flex"
+            cols="12"
+            sm="7"
+        >
+          <v-sheet class="content-section"
+           color="white"
+           elevation="1"
+           rounded
+          >
+            <v-layout>
+              <v-select
+                  :items="items"
+                  label="Select parameter"
+                  dense
+                  outlined
+              ></v-select>
+            </v-layout>
+          </v-sheet>
+
+        </v-col>
+      </v-flex>
+    </v-layout>
+  <!--  <v-sheet class="sheet-custom"
         color="white"
         elevation="1"
         rounde
@@ -179,7 +218,7 @@
         </v-col>
       </v-card>
 
-    </v-sheet>
+    </v-sheet> -->
   </v-container>
 </template>
 
@@ -203,6 +242,23 @@ export default {
 
 
 <style style scoped lang="scss">
+
+.container{
+  padding: 4px;
+}
+.if-notes {
+  .title {
+    margin-bottom: 10px;
+
+    .if-description {
+      margin-top: 10px;
+    }
+  }
+}
+.content-section{
+  width: 100%;
+  padding: 20px;
+}
 
 .sheet-custom {
   padding: 18px;
