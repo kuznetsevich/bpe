@@ -294,37 +294,13 @@ export default {
 .content-section{
   width: 100%;
   padding: 20px;
-}
-
-.sheet-custom {
-  padding: 18px;
-  margin-bottom: 20px;
+  .sheet-custom {
+    padding: 18px;
+    margin-bottom: 20px;
     .divider {
       margin: 10px 0;
     }
-}
-
-.row-custom {
-  margin: 0px;
- }
-
-.first-col-color {
-  background-color: #F5F5F5;
-  padding: 2px;
-  text-align: center;
-}
-.card-custom{
-  align-items: baseline;
-  justify-content: space-between;
-}
-
-.add-button-custom{
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.radio-btn-group{
-  margin: 0;
+  }
 }
 
 .row-style-custom {
