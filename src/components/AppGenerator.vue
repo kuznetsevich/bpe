@@ -285,7 +285,6 @@ export default {
 .if-notes {
   .title {
     margin-bottom: 10px;
-
     .if-description {
       margin-top: 10px;
     }
