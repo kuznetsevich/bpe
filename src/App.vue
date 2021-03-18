@@ -1,25 +1,23 @@
 <template>
- <v-app>
-   <v-container class="container-custom-main">
-     <AppNavigation />
-     <AppGenerator />
-   </v-container>
- </v-app>
+  <VApp>
+    <VContainer class="container-custom-main">
+      <AppIndex />
+    </VContainer>
+  </VApp>
 </template>
 
 <script>
 
-  import AppNavigation from '@/components/AppNavigation'
-  import AppGenerator from "@/components/AppGenerator";
-  export default {
-    name: "App",
-    components: {AppGenerator, AppNavigation },
+import AppIndex from '@/components/AppIndex';
+export default {
+    name: 'App',
+    components: { AppIndex },
     data (){
-      return {
+        return {
         //
-      }
+        };
     }
-  }
+};
 
 
 </script>

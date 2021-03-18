@@ -1,7 +1,7 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from 'vue';
+import Vuex from 'vuex';
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 const store = new Vuex.Store({
     state: {
@@ -25,21 +25,21 @@ const store = new Vuex.Store({
         statistic_raw_config: JSON.parse(localStorage.getItem('statistic_raw_config')) || {},
     },
     mutations: {
-        setRawStatisticConfig(state, payload) {
+        setRawStatisticConfig (state, payload) {
             state.statistic_raw_config = payload;
             localStorage.setItem('statistic_raw_config', JSON.stringify(payload));
         },
-        setLoading(state, payload) {
+        setLoading (state, payload) {
             state.dataLoading = payload;
         },
 
-        setUserId(state, payload) {
+        setUserId (state, payload) {
             state.auth_user = +payload;
         },
-        setDebts(state, payload) {
+        setDebts (state, payload) {
             state.debts = payload || [];
         },
-        setAuthExpires(state, payload) {
+        setAuthExpires (state, payload) {
             state.auth_expires = +payload;
         },
         setAuth (state, payload) {
@@ -70,7 +70,7 @@ const store = new Vuex.Store({
             setTimeout(() => {
                 state.alertData.display = false;
                 console.log('clear alert');
-            }, (payload.delay || 5) * 1000)
+            }, (payload.delay || 5) * 1000);
         }
     },
     getters: {
@@ -81,6 +81,6 @@ const store = new Vuex.Store({
             return state.statistic_raw_config;
         }
     }
-})
+});
 
 export default store;
