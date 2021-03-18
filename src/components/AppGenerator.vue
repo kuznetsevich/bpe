@@ -1,5 +1,7 @@
 <template>
-  <v-container>
+  <v-container class="flex-column">
+
+<!-- IF -->
     <v-layout column>
       <v-flex d-flex xs12>
         <v-col
@@ -26,199 +28,233 @@
            elevation="1"
            rounded
           >
-            <v-layout>
+            <v-layout class="flex-column">
               <v-select
                   :items="items"
                   label="Select parameter"
                   dense
                   outlined
               ></v-select>
+              <v-spacer></v-spacer>
+              <v-select
+                  :items="items"
+                  label="Select parameter"
+                  dense
+                  outlined
+              ></v-select>
+              <v-spacer></v-spacer>
+              <v-text-field
+                  label="Enter the value"
+                  outlined
+                  dense
+              ></v-text-field>
+              <v-row align="center">
+                <v-col
+                    cols="12"
+                    sm="6"
+                >
+                  <v-subheader v-text="'Additional condition'"></v-subheader>
+                </v-col>
+                <v-col
+                    cols="12"
+                    sm="6"
+                >
+                  <v-select
+                      v-model="e6"
+                      :items="states"
+                      :menu-props="{ maxHeight: '400' }"
+                      label="Select"
+                      multiple
+                      persistent-hint
+                  ></v-select>
+                </v-col>
+              </v-row>
             </v-layout>
           </v-sheet>
 
         </v-col>
       </v-flex>
     </v-layout>
-  <!--  <v-sheet class="sheet-custom"
-        color="white"
-        elevation="1"
-        rounde
-    >
-      <v-list-item-title class="text-lg-h5">
-      Set the rule for generator
-        <v-divider class="divider"></v-divider>
-      </v-list-item-title>
-      <v-card class="card-custom d-flex"
-        flat>
-        <v-col
-            class="d-flex first-col-color"
-            cols="12"
-            sm="1"
-        >
-          <v-card-text class="text-lg-h6">
-            If
-          </v-card-text>
-        </v-col>
-        <v-spacer></v-spacer>
+    <v-layout column>
+      <v-flex d-flex xs12>
         <v-col
             class="d-flex"
             cols="12"
-            sm="3"
+            sm="4"
         >
-          <v-select
-              :items="items"
-              dense
-              outlined
-          ></v-select>
-        </v-col>
-        <v-spacer></v-spacer>
-        <v-col
-            class="d-flex"
-            cols="12"
-            sm="3"
-        >
-          <v-select
-              :items="items"
-              dense
-              outlined
-          ></v-select>
-        </v-col>
-        <v-spacer></v-spacer>
-        <v-col
-          class="d-flex"
-          cols="12"
-          sm="3"
-      >
-          <v-text-field
-              outlined
-              dense
-              clearable
-          ></v-text-field>
-      </v-col>
-      <v-col
-          class="d-flex add-button-custom"
-          cols="12"
-          sm="2"
-      >
-        <div class="text-center">
-
-          <v-menu
-              top
-              :close-on-content-click="closeOnContentClick"
-          >
-            <template v-slot:activator="{ on, attrs }">
-              <v-btn
-                  elevation="1"
-                  white
-                  v-bind="attrs"
-                  v-on="on"
-              >
-                <v-icon>mdi-plus</v-icon>
-              </v-btn>
-            </template>
-
-            <v-list>
-              <v-list-item
-                  v-for="(item, index) in items"
-                  :key="index"
-              >
-                <v-list-item-title>{{ item.title }}</v-list-item-title>
-              </v-list-item>
-            </v-list>
-          </v-menu>
-        </div>
-      </v-col>
-      </v-card>
-
-    </v-sheet>
-    <v-sheet class="sheet-custom"
-             color="white"
-             elevation="1"
-             rounde
-    >
-      <v-card class="card-custom d-flex"
-              flat>
-        <v-col
-            class="d-flex first-col-color"
-            cols="12"
-            sm="1"
-        >
-          <v-card-text class="text-lg-h6">
-            And
-          </v-card-text>
-        </v-col>
-        <v-spacer></v-spacer>
-        <v-col
-            class="d-flex"
-            cols="12"
-            sm="3"
-        >
-          <v-select
-              :items="items"
-              dense
-              outlined
-          ></v-select>
-        </v-col>
-        <v-spacer></v-spacer>
-        <v-col
-            class="d-flex"
-            cols="12"
-            sm="3"
-        >
-          <v-select
-              :items="items"
-              dense
-              outlined
-          ></v-select>
-        </v-col>
-        <v-spacer></v-spacer>
-        <v-col
-            class="d-flex"
-            cols="12"
-            sm="3"
-        >
-          <v-text-field
-              outlined
-              dense
-              clearable
-          ></v-text-field>
-        </v-col>
-        <v-col
-            class="d-flex add-button-custom"
-            cols="12"
-            sm="2"
-        >
-          <div class="text-center">
-
-            <v-menu
-                top
-                :close-on-content-click="closeOnContentClick"
-            >
-              <template v-slot:activator="{ on, attrs }">
-                <v-btn
-                    elevation="1"
-                    white
-                    v-bind="attrs"
-                    v-on="on"
-                >
-                  <v-icon>mdi-plus</v-icon>
-                </v-btn>
-              </template>
-
-              <v-list>
-                <v-list-item
-                    v-for="(item, index) in items"
-                    :key="index"
-                >
-                  <v-list-item-title>{{ item.title }}</v-list-item-title>
-                </v-list-item>
-              </v-list>
-            </v-menu>
+          <div class="if-notes">
+            <h6 class="title">AND</h6>
+            <p class="if-description caption">
+              Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.
+            </p>
           </div>
-        </v-col>
-      </v-card>
 
-    </v-sheet> -->
+        </v-col>
+        <v-spacer></v-spacer>
+        <v-col
+            class="d-flex"
+            cols="12"
+            sm="7"
+        >
+          <v-sheet class="content-section"
+                   color="white"
+                   elevation="1"
+                   rounded
+          >
+            <v-layout class="flex-column">
+              <v-select
+                  :items="items"
+                  label="Select parameter"
+                  dense
+                  outlined
+              ></v-select>
+              <v-spacer></v-spacer>
+              <v-select
+                  :items="items"
+                  label="Select parameter"
+                  dense
+                  outlined
+              ></v-select>
+              <v-spacer></v-spacer>
+              <v-text-field
+                  label="Enter the value"
+                  outlined
+                  dense
+              ></v-text-field>
+            </v-layout>
+          </v-sheet>
+
+        </v-col>
+      </v-flex>
+    </v-layout>
+    <v-layout column>
+      <v-flex d-flex xs12>
+        <v-col
+            class="d-flex"
+            cols="12"
+            sm="4"
+        >
+          <div class="if-notes">
+            <h6 class="title">THEN</h6>
+            <p class="if-description caption">
+              Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.
+            </p>
+          </div>
+
+        </v-col>
+        <v-spacer></v-spacer>
+        <v-col
+            class="d-flex"
+            cols="12"
+            sm="7"
+        >
+          <v-sheet class="content-section"
+                   color="white"
+                   elevation="1"
+                   rounded
+          >
+            <v-layout class="flex-column">
+              <v-row class="row-style-custom">
+                <v-col
+                    cols="12"
+                    sm="6"
+                >
+                  <v-subheader v-text="'Select Character Count'"></v-subheader>
+                </v-col>
+                <v-col
+                    cols="12"
+                    sm="6"
+                >
+                  <v-select
+                      :items="items"
+                      label="Select"
+                      dense
+                      outlined
+                  ></v-select>
+                </v-col>
+              </v-row>
+              <v-row class="row-style-custom">
+                <v-col
+                    cols="12"
+                    sm="6"
+                >
+                  <v-subheader v-text="'Select Seperator Style'"></v-subheader>
+                </v-col>
+                <v-col
+                    cols="12"
+                    sm="6"
+                >
+                  <v-select
+                      :items="items"
+                      label="Select"
+                      dense
+                      outlined
+                  ></v-select>
+                </v-col>
+              </v-row>
+              <v-row class="row-style-custom">
+                <v-col
+                    cols="12"
+                    sm="4"
+                >
+                  <v-subheader v-text="'Take option 1'"></v-subheader>
+                </v-col>
+                <v-col
+                    cols="12"
+                    sm="8"
+                >
+                  <v-select
+                      :items="items"
+                      label="Select parameter"
+                      dense
+                      outlined
+                  ></v-select>
+                </v-col>
+              </v-row>
+              <v-row class="row-style-custom" >
+                <v-col
+                    cols="12"
+                    sm="4"
+                >
+                  <v-subheader v-text="'Take option 2'"></v-subheader>
+                </v-col>
+                <v-col
+                    cols="12"
+                    sm="8"
+                >
+                  <v-select
+                      :items="items"
+                      label="Select parameter"
+                      dense
+                      outlined
+                  ></v-select>
+                </v-col>
+              </v-row>
+              <v-row class="row-style-custom">
+                <v-col
+                    cols="12"
+                    sm="4"
+                >
+                  <v-subheader v-text="'Take option 3'"></v-subheader>
+                </v-col>
+                <v-col
+                    cols="12"
+                    sm="8"
+                >
+                  <v-select
+                      :items="items"
+                      label="Select parameter"
+                      dense
+                      outlined
+                  ></v-select>
+                </v-col>
+              </v-row>
+            </v-layout>
+          </v-sheet>
+
+        </v-col>
+      </v-flex>
+    </v-layout>
   </v-container>
 </template>
 
@@ -287,5 +323,12 @@ export default {
   justify-content: flex-end;
 }
 
+.radio-btn-group{
+  margin: 0;
+}
+
+.row-style-custom {
+  max-height: 65px;
+}
 
 </style>
