@@ -1,6 +1,6 @@
 import AppHome from './components/AppHome';
-import AppProfile from "./components/AppProfile";
-import AppUsers from "./components/AppUsers";
+import AppProfile from './components/AppProfile';
+import AppUsers from './components/AppUsers';
 
 const routes = [
     {
