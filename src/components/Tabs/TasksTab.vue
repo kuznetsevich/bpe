@@ -2,9 +2,10 @@
   <VContainer class="flex-column">
     <VLayout column>
       <VFlex
-          d-flex
+          flex-column
           xs12
       >
+
         <v-expansion-panels>
 
           <v-expansion-panel>
@@ -50,6 +51,13 @@
           </v-expansion-panel>
 
         </v-expansion-panels>
+
+        <v-pagination class="pagination-tasks-custom"
+            v-model="page"
+            :length="4"
+            prev-icon="mdi-menu-left"
+            next-icon="mdi-menu-right"
+        ></v-pagination>
       </VFlex>
     </VLayout>
   </VContainer>
@@ -72,5 +80,14 @@ export default {
 </script>
 
 <style scoped>
+
+.block-margin-custom{
+  margin-top: 0;
+}
+
+.pagination-tasks-custom {
+  justify-content: center;
+  margin-top: 4%;
+}
 
 </style>
