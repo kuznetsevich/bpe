@@ -52,6 +52,38 @@
                     </div>
                   </VCol>
                 </VFlex>
+                <v-divider
+                  class="pa-2"
+                ></v-divider>
+                <VFlex
+                    d-flex
+                    xs12
+                >
+                  <VCol
+                      class="d-flex"
+                      cols="12"
+                      sm="6"
+                  >
+                    <v-btn
+                        depressed
+                        color="primary"
+                    >
+                      Download CSV
+                    </v-btn>
+                  </VCol>
+                  <VCol
+                      class="d-flex task-restore-btn"
+                      cols="12"
+                      sm="6"
+                  >
+                    <v-btn
+                        depressed
+                        color="error"
+                    >
+                      Restore
+                    </v-btn>
+                  </VCol>
+                </VFlex>
               </VLayout>
             </v-expansion-panel-content>
           </v-expansion-panel>
@@ -122,6 +154,10 @@ export default {
 .pagination-tasks-custom {
   justify-content: center;
   margin-top: 4%;
+}
+
+.task-restore-btn {
+  justify-content: flex-end;
 }
 
 </style>
