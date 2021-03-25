@@ -293,13 +293,6 @@
           </v-expansion-panel>
 
         </v-expansion-panels>
-
-        <v-pagination class="pagination-tasks-custom"
-            v-model="page"
-            :length="4"
-            prev-icon="mdi-menu-left"
-            next-icon="mdi-menu-right"
-        ></v-pagination>
       </VFlex>
     </VLayout>
   </VContainer>
