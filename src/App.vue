@@ -2,6 +2,7 @@
   <VApp>
     <VContainer class="container-custom-main">
       <AppIndex />
+      <AppFooter />
     </VContainer>
   </VApp>
 </template>
@@ -9,15 +10,17 @@
 <script>
 
 import AppIndex from '@/components/AppIndex';
+import AppFooter from '@/components/AppFooter';
 export default {
     name: 'App',
-    components: { AppIndex },
+    components: { AppIndex, AppFooter },
     data (){
         return {
         //
         };
     }
 };
+
 
 
 </script>

@@ -299,13 +299,7 @@
       </VFlex>
     </VLayout>
 
-    <v-alert
-        class="mx-4"
-        dense
-        type="info"
-    >
-      I'm a dense alert with a <strong>type</strong> of info
-    </v-alert>
+
   </VContainer>
 </template>
 
