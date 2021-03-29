@@ -1,18 +1,22 @@
 <template>
   <v-layout class="d-flex mt-8 justify-center">
-    <v-btn
-        text
-        color="#BDBDBD"
-    >
-      Privacy Policy
-    </v-btn>
+    <AppPrivacy />
   </v-layout>
 </template>
 
 <script>
+import AppPrivacy from './Dialogs/AppPrivacy';
+
 export default {
-  name: 'AppFooter'
+  name: 'AppFooter',
+  components: { AppPrivacy },
+  data (){
+    return {
+      //
+    };
+  }
 };
+
 </script>
 
 <style scoped>
