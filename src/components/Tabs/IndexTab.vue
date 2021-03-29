@@ -266,6 +266,38 @@
         </VCol>
       </VFlex>
     </VLayout>
+    <VLayout column>
+      <VFlex
+          d-flex
+          xs12
+      >
+        <VCol
+            class="d-flex"
+            cols="12"
+            sm="4"
+        >
+        </VCol>
+        <VSpacer />
+        <VCol
+            class="d-flex justify-space-between"
+            cols="12"
+            sm="7"
+        >
+          <v-btn
+              depressed
+              color="error"
+          >
+            Clear
+          </v-btn>
+          <v-btn
+              depressed
+              color="primary"
+          >
+            Run
+          </v-btn>
+        </VCol>
+      </VFlex>
+    </VLayout>
   </VContainer>
 </template>
 
