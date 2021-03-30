@@ -1,39 +1,64 @@
 <template>
   <div class="tab_wrapper">
-    <VTabs
-      v-model="tab"
-      :width="width"
-      background-color="transparent"
-      class="navi-tabs"
-    >
-      <VTab href="#index_app_tab">
-        Generator
-      </VTab>
-      <VTab href="#task_app_tab">
-        Tasks
-      </VTab>
-      <VTab href="#instruction_app_tab">
-        Instruction
-      </VTab>
-      <VTab href="#add_app_tab">
-        Other apps
-      </VTab>
-    </VTabs>
+    <v-layout class="d-flex align-center">
+      <v-col
+          cols="9"
+          sm="9"
+          md="9"
+          lg="9"
+      >
+        <VTabs
+            v-model="tab"
+            :width="width"
+            background-color="transparent"
+            class="navi-tabs"
+        >
+          <VTab href="#index_app_tab">
+            Generator
+          </VTab>
+          <VTab href="#task_app_tab">
+            Tasks
+          </VTab>
+          <VTab href="#instruction_app_tab">
+            Instruction
+          </VTab>
+          <VTab href="#add_app_tab">
+            Other apps
+          </VTab>
+        </VTabs>
+      </v-col>
+      <v-col
+          cols="3"
+          sm="3"
+          md="3"
+          lg="3"
+      >
+        <v-switch class="mt-0"
+            v-model="reverse"
+            label="Dark mode"
+        ></v-switch>
+      </v-col>
+    </v-layout>
 
-    <VTabsItems v-model="tab">
-      <VTabItem id="index_app_tab">
-        <IndexTab />
-      </VTabItem>
-      <VTabItem id="task_app_tab">
-        <TasksTab />
-      </VTabItem>
-      <VTabItem id="instruction_app_tab">
-        <InstructionTab />
-      </VTabItem>
-      <VTabItem id="add_app_tab">
-        <AdsTab />
-      </VTabItem>
-    </VTabsItems>
+
+      <VTabsItems v-model="tab">
+        <VTabItem id="index_app_tab">
+          <IndexTab />
+        </VTabItem>
+        <VTabItem id="task_app_tab">
+          <TasksTab />
+        </VTabItem>
+        <VTabItem id="instruction_app_tab">
+          <InstructionTab />
+        </VTabItem>
+        <VTabItem id="add_app_tab">
+          <AdsTab />
+        </VTabItem>
+      </VTabsItems>
+
+
+
+
   </div>
 </template>
 
