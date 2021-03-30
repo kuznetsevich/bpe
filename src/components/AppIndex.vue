@@ -2,16 +2,16 @@
   <div class="tab_wrapper">
     <v-layout class="d-flex align-center">
       <v-col
-          cols="9"
-          sm="9"
-          md="9"
-          lg="9"
+        cols="9"
+        sm="9"
+        md="9"
+        lg="9"
       >
         <VTabs
-            v-model="tab"
-            :width="width"
-            background-color="transparent"
-            class="navi-tabs"
+          v-model="tab"
+          :width="width"
+          background-color="transparent"
+          class="navi-tabs"
         >
           <VTab href="#index_app_tab">
             Generator
@@ -41,7 +41,8 @@
         md="3"
         lg="3"
       >
-        <v-switch class="mt-0"
+        <v-switch
+          class="mt-0"
           v-model="reverse"
           label="Dark mode"
         >
@@ -50,7 +51,7 @@
     </v-layout>
 
 
-      <VTabsItems v-model="tab">
+    <VTabsItems v-model="tab">
         <VTabItem id="index_app_tab">
           <IndexTab />
         </VTabItem>

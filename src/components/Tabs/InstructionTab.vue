@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <v-layout class="mt-3">
 
     <v-expansion-panels
         v-model="panel"
@@ -27,7 +27,7 @@
         </v-expansion-panel-content>
       </v-expansion-panel>
     </v-expansion-panels>
-  </div>
+  </v-layout>
 </template>
 
 <script>

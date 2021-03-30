@@ -1,6 +1,5 @@
 <template>
-  <VContainer class="flex-column">
-    <VLayout column>
+  <VLayout column class="mt-3">
       <VFlex
           flex-column
           xs12
@@ -295,8 +294,6 @@
         </v-expansion-panels>
       </VFlex>
     </VLayout>
-  </VContainer>
-
 </template>
 
 <script>
@@ -307,23 +304,11 @@ export default {
   readonly: false,
 };
 
-
-
-
 </script>
 
 </script>
 
 <style scoped>
-
-.block-margin-custom{
-  margin-top: 0;
-}
-
-.pagination-tasks-custom {
-  justify-content: center;
-  margin-top: 4%;
-}
 
 .task-restore-btn {
   justify-content: flex-end;

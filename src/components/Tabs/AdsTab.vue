@@ -1,9 +1,9 @@
 <template>
   <v-container>
-    <v-row d-flex justify-space-between>
+    <v-row class="d-flex justify-space-between mt-0">
       <v-card
           :loading="loading"
-          class="mx-auto my-12"
+          class="mt-0 my-12"
           max-width="260"
           max-height="522"
       >
@@ -63,7 +63,7 @@
       <v-spacer></v-spacer>
       <v-card
           :loading="loading"
-          class="mx-auto my-12"
+          class="mt-0 my-12"
           max-width="260"
           max-height="522"
       >
@@ -123,7 +123,7 @@
       <v-spacer></v-spacer>
       <v-card
           :loading="loading"
-          class="mx-auto my-12"
+          class="mt-0 my-12"
           max-width="260"
           max-height="522"
       >
@@ -181,10 +181,10 @@
         </v-card-actions>
       </v-card>
     </v-row>
-    <v-row d-flex justify-space-between>
+    <v-row class="d-flex justify-space-between mt-0">
       <v-card
           :loading="loading"
-          class="mx-auto my-12"
+          class="mt-0 my-12"
           max-width="260"
           max-height="522"
       >
@@ -244,7 +244,7 @@
       <v-spacer></v-spacer>
       <v-card
           :loading="loading"
-          class="mx-auto my-12"
+          class="mt-0 my-12"
           max-width="260"
           max-height="522"
       >
@@ -304,7 +304,7 @@
       <v-spacer></v-spacer>
       <v-card
           :loading="loading"
-          class="mx-auto my-12"
+          class="mt-0 my-12"
           max-width="260"
           max-height="522"
       >
@@ -371,6 +371,6 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 
 </style>
