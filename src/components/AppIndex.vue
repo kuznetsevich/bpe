@@ -25,6 +25,14 @@
           <VTab href="#add_app_tab">
             Other apps
           </VTab>
+          <VTab href="#add_app_tab">
+            <v-badge
+              color="pink"
+              dot
+            >
+              Updates
+            </v-badge>
+          </VTab>
         </VTabs>
       </v-col>
       <v-col
@@ -54,6 +62,9 @@
         <VTabItem id="add_app_tab">
           <AdsTab />
         </VTabItem>
+        <VTabItem id="add_app_tab">
+          <UpdateTab />
+        </VTabItem>
       </VTabsItems>
 
 
@@ -67,9 +78,10 @@ import AdsTab from '@/components/Tabs/AdsTab';
 import IndexTab from '@/components/Tabs/IndexTab';
 import InstructionTab from '@/components/Tabs/InstructionTab';
 import TasksTab from '@/components/Tabs/TasksTab';
+import UpdateTab from './Tabs/UpdateTab';
 export default {
     name: 'AppIndex',
-    components: { IndexTab, AdsTab, TasksTab, InstructionTab },
+    components: { IndexTab, AdsTab, TasksTab, InstructionTab, UpdateTab },
     data: () => ({
         tab: null,
     }),
