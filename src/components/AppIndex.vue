@@ -25,26 +25,27 @@
           <VTab href="#add_app_tab">
             Other apps
           </VTab>
-          <VTab href="#add_app_tab">
+          <VTab icon href="#update_app_tab">
             <v-badge
               color="pink"
               dot
             >
-              Updates
+              <v-icon>mdi-bell-outline</v-icon>
             </v-badge>
           </VTab>
         </VTabs>
       </v-col>
       <v-col
-          cols="3"
-          sm="3"
-          md="3"
-          lg="3"
+        cols="3"
+        sm="3"
+        md="3"
+        lg="3"
       >
         <v-switch class="mt-0"
-            v-model="reverse"
-            label="Dark mode"
-        ></v-switch>
+          v-model="reverse"
+          label="Dark mode"
+        >
+        </v-switch>
       </v-col>
     </v-layout>
 
@@ -62,7 +63,7 @@
         <VTabItem id="add_app_tab">
           <AdsTab />
         </VTabItem>
-        <VTabItem id="add_app_tab">
+        <VTabItem id="update_app_tab">
           <UpdateTab />
         </VTabItem>
       </VTabsItems>

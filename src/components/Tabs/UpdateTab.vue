@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'InstructionTab'
+  name: 'UpdateTab'
 };
 </script>
 
