@@ -1,7 +1,8 @@
 <template>
   <v-switch
       class="mt-0 pa-0"
-      v-model="reverse"
+      @click="changeTheme"
+      v-model="isBlacked"
       label="Dark mode"
   >
   </v-switch>
@@ -9,11 +10,17 @@
 
 <script>
 export default {
-  name: 'ThemeModeSwitcher'
-  themeButton.onclick = function() {
-    page.classList.toggle('light-theme');
-    page.classList.toggle('dark-theme');
+  name: 'ThemeModeSwitcher',
+  data() {
+    return {
+      isBlacked: false,
+    }
   },
+  methods: {
+    changeTheme() {
+      this.$vuetify.theme.dark = this.isBlacked;
+    }
+  }
 };
 </script>
 
