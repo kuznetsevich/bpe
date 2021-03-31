@@ -41,12 +41,7 @@
         md="3"
         lg="3"
       >
-        <v-switch
-          class="mt-0"
-          v-model="reverse"
-          label="Dark mode"
-        >
-        </v-switch>
+        <ThemeModeSwitcher />
       </v-col>
     </v-layout>
 
@@ -80,10 +75,11 @@ import AdsTab from '@/components/Tabs/AdsTab';
 import IndexTab from '@/components/Tabs/IndexTab';
 import InstructionTab from '@/components/Tabs/InstructionTab';
 import TasksTab from '@/components/Tabs/TasksTab';
+import ThemeModeSwitcher from './Switcher/ThemeModeSwitcher';
 import UpdateTab from './Tabs/UpdateTab';
 export default {
     name: 'AppIndex',
-    components: { IndexTab, AdsTab, TasksTab, InstructionTab, UpdateTab },
+    components: { ThemeModeSwitcher, IndexTab, AdsTab, TasksTab, InstructionTab, UpdateTab },
     data: () => ({
         tab: null,
     }),
@@ -100,6 +96,9 @@ export default {
         },
     },
 };
+
+
+
 </script>
 
 <style scoped lang="scss">
