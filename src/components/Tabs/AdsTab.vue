@@ -51,7 +51,7 @@
         <v-divider class="mx-4"></v-divider>
 
         <v-card-actions>
-          <v-btn block
+          <v-btn block href="https://apps.shopify.com/bulk-price-editor-by-buymaxx"
                  color="primary"
                  elevation="2"
                  @click="get_it"

@@ -1,9 +1,9 @@
 <template>
   <v-switch
-      class="mt-0 pa-0"
-      @click="changeTheme"
-      v-model="isBlacked"
-      label="Dark mode"
+    class="mt-0 pa-0"
+    @click="changeTheme"
+    v-model="isBlacked"
+    label="Dark mode"
   >
   </v-switch>
 </template>

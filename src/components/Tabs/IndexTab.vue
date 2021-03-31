@@ -34,14 +34,14 @@
           >
             <VLayout class="flex-column">
               <VSelect
-                :items="items"
+                :items="if_first_selector"
                 label="Select parameter"
                 dense
                 outlined
               />
               <VSpacer />
               <VSelect
-                :items="items"
+                :items="if_second_selector"
                 label="Select parameter"
                 dense
                 outlined
@@ -306,13 +306,14 @@
 export default {
     name: 'IndexTab',
     data: () => ({
-        items: [
-            { title: 'And' },
-            { title: 'Or' },
-            { title: 'Copy' },
-        ],
+      if_first_selector: ['All', 'Vendor', 'Collection', 'Product type', 'Stock', 'Price', 'Compare at price', 'Cost per item'],
+      if_second_selector: ['is', 'is not'],
+
     }),
 };
+
+
+
 </script>
 
 <style style scoped lang="scss">
