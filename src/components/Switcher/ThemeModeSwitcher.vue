@@ -14,8 +14,8 @@ export default {
   data() {
     return {
       isBlacked: false,
-    }
-  },
+      }
+    },
   methods: {
     changeTheme() {
       this.$vuetify.theme.dark = this.isBlacked;
