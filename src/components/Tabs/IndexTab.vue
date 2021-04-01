@@ -69,7 +69,7 @@
                     :menu-props="{ maxHeight: '400' }"
                     label="Select"
                     persistent-hint
-                    v-on:select="additional_selector"
+                    @select="additional_selector"
                   />
                 </VCol>
               </VRow>
@@ -272,33 +272,31 @@
         xs12
       >
         <VCol
-            class="d-flex"
-            cols="12"
-            sm="4"
-        >
-        </VCol>
+          class="d-flex"
+          cols="12"
+          sm="4"
+        />
         <VSpacer />
         <VCol
           class="d-flex justify-space-between"
           cols="12"
           sm="7"
         >
-          <v-btn
+          <VBtn
             depressed
             color="error"
           >
             Clear
-          </v-btn>
-          <v-btn
-              depressed
-              color="primary"
+          </VBtn>
+          <VBtn
+            depressed
+            color="primary"
           >
             Run
-          </v-btn>
+          </VBtn>
         </VCol>
       </VFlex>
     </VLayout>
-
   </VContainer>
 </template>
 
@@ -306,18 +304,25 @@
 export default {
     name: 'IndexTab',
     data: () => ({
-      if_first_selector: ['All', 'Vendor', 'Collection', 'Product type', 'Stock', 'Price', 'Compare at price', 'Cost per item'],
-      if_second_selector: ['is', 'is not'],
-
-      additional_selector: ['And', 'Or'],
-
-      function onClick() {}
-
-}
-
+        if_first_selector: [ 'All', 'Vendor', 'Collection', 'Product type', 'Stock', 'Price', 'Compare at price', 'Cost per item' ],
+        if_second_selector: [ 'is', 'is not' ],
+        additional_selector: [ 'And', 'Or' ],
+        conditions: [
+            [
+                { action: 'vendor_is', value: 'reebok' },
+                { action: 'title_contains', value: 'foot' },
+            ],
+            [
+                { action: 'product_type', value: 't-shirt' },
+            ]
+        ],
     }),
+    methods: {
+        doSmth () {
+            console.log('adwsdasd');
+        },
+    }
 };
-
 
 
 </script>
