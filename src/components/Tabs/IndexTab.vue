@@ -65,11 +65,11 @@
                 >
                   <VSelect
                     v-model="e6"
-                    :items="states"
+                    :items="additional_selector"
                     :menu-props="{ maxHeight: '400' }"
                     label="Select"
-                    multiple
                     persistent-hint
+                    v-on:select="additional_selector"
                   />
                 </VCol>
               </VRow>
@@ -268,8 +268,8 @@
     </VLayout>
     <VLayout column>
       <VFlex
-          d-flex
-          xs12
+        d-flex
+        xs12
       >
         <VCol
             class="d-flex"
@@ -279,13 +279,13 @@
         </VCol>
         <VSpacer />
         <VCol
-            class="d-flex justify-space-between"
-            cols="12"
-            sm="7"
+          class="d-flex justify-space-between"
+          cols="12"
+          sm="7"
         >
           <v-btn
-              depressed
-              color="error"
+            depressed
+            color="error"
           >
             Clear
           </v-btn>
@@ -308,6 +308,12 @@ export default {
     data: () => ({
       if_first_selector: ['All', 'Vendor', 'Collection', 'Product type', 'Stock', 'Price', 'Compare at price', 'Cost per item'],
       if_second_selector: ['is', 'is not'],
+
+      additional_selector: ['And', 'Or'],
+
+      function onClick() {}
+
+}
 
     }),
 };
