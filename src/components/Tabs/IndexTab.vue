@@ -305,12 +305,16 @@ export default {
     name: 'IndexTab',
     data: () => ({
         if_first_selector: [ 'All', 'Vendor', 'Collection', 'Product type', 'Stock', 'Price', 'Compare at price', 'Cost per item' ],
-        if_second_selector: [ 'is', 'is not' ],
+        if_second_selector: [ 'is', 'is not', 'contains', 'does not contain', 'is empty', 'is not empty', 'is greater then', 'is greater or equal to', 'is less then', 'is less or equal to' ],
         additional_selector: [ 'And', 'Or' ],
         conditions: [
             [
                 { action: 'vendor_is', value: 'reebok' },
-                { action: 'title_contains', value: 'foot' },
+                { action: 'collection_is', value: 'foot' },
+                { action: 'vendor_is', value: 'reebok' },
+                { action: 'collection_is', value: 'foot' },
+                { action: 'vendor_is', value: 'reebok' },
+                { action: 'collection_is', value: 'foot' },
             ],
             [
                 { action: 'product_type', value: 't-shirt' },
