@@ -47,10 +47,12 @@
                 outlined
               />
               <VSpacer />
-              <VTextField
-                label="Enter the value"
-                outlined
-                dense
+              <VTextField input
+                  label="Enter the value"
+                  outlined
+                  dense
+                  :rules="rules"
+                  v-model="UserValue"
               />
               <VRow align="center">
                 <VCol
@@ -329,11 +331,18 @@ export default {
                 { action: 'cost', value: 'foot' },
             ]
         ],
+      rules: [
+        value => !!value || 'Required.',
+        value => (value || '').length <= 20 || 'Max 20 characters',
+      ],
     }),
     methods: {
         doSmth () {
             console.log('adwsdasd');
         },
+        UserValue({target}){
+            console.log(target.value);
+        }
     }
 };
 
