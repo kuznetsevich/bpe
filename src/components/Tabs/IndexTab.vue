@@ -15,7 +15,7 @@
         </VCol>
         <VSpacer />
         <VCol class="d-flex" cols="12" sm="7">
-          <VSheet class="content-section" color="white" elevation="1" rounded>
+          <VSheet class="content-section" :color="this.$vuetify.theme.dark ? 'dark':'white'" elevation="1" rounded>
             <VLayout class="flex-column">
               <VSelect
                   v-model="answer.if_first_selector"
