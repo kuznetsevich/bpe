@@ -18,7 +18,7 @@
           <VSheet class="content-section" color="white" elevation="1" rounded>
             <VLayout class="flex-column">
               <VSelect
-                  v-model="if_answer.first_selector"
+                  v-model="answer.if_first_selector"
                   :items="if_first_selector"
                   label="Select parameter"
                   dense
@@ -29,7 +29,7 @@
               <VExpandTransition>
                 <VSelect
                     v-show="if_second_text_selector_is_show"
-                    v-model="if_answer.second_selector"
+                    v-model="answer.if_second_selector"
                     :items="if_second_selector"
                     label="Select parameter"
                     dense
@@ -40,7 +40,7 @@
               <VExpandTransition>
                 <VTextField
                     v-show="if_second_text_selector_is_show"
-                    v-model="if_answer.text_selector"
+                    v-model="answer.if_text_selector"
                     input
                     label="Enter the value"
                     outlined
@@ -126,7 +126,13 @@
                   <VSubheader v-text="'Select Character Count'" />
                 </VCol>
                 <VCol cols="12" sm="6">
-                  <VSelect :items="items" label="Select" dense outlined />
+                  <VSelect
+                      label="Select"
+                      dense
+                      outlined
+                      :items="[3, 4, 5, 6, 7, 8, 9]"
+                      v-model="answer.then_character_count"
+                  />
                 </VCol>
               </VRow>
               <VRow class="row-style-custom">
@@ -134,7 +140,13 @@
                   <VSubheader v-text="'Select Seperator Style'" />
                 </VCol>
                 <VCol cols="12" sm="6">
-                  <VSelect :items="items" label="Select" dense outlined />
+                  <VSelect
+                      :items="['/', '.', ':', ',', '-', 'merged']"
+                      label="Select"
+                      dense
+                      outlined
+                      v-model="answer.then_separator_style"
+                  />
                 </VCol>
               </VRow>
               <VRow class="row-style-custom">
@@ -142,12 +154,7 @@
                   <VSubheader v-text="'Take option 1'" />
                 </VCol>
                 <VCol cols="12" sm="8">
-                  <VSelect
-                      :items="items"
-                      label="Select parameter"
-                      dense
-                      outlined
-                  />
+                  <VSelect :items="items" label="Select size" dense outlined v-model="answer.then_size"/>
                 </VCol>
               </VRow>
               <VRow class="row-style-custom">
@@ -156,10 +163,11 @@
                 </VCol>
                 <VCol cols="12" sm="8">
                   <VSelect
-                      :items="items"
-                      label="Select parameter"
+                      :items="thenAbbreviatedName"
+                      label="Select color"
                       dense
                       outlined
+                      v-model="answer.then_color"
                   />
                 </VCol>
               </VRow>
@@ -170,9 +178,10 @@
                 <VCol cols="12" sm="8">
                   <VSelect
                       :items="items"
-                      label="Select parameter"
+                      label="Select material"
                       dense
                       outlined
+                      v-model="answer.then_material"
                   />
                 </VCol>
               </VRow>
@@ -186,7 +195,7 @@
         <VCol class="d-flex" cols="12" sm="4" />
         <VSpacer />
         <VCol class="d-flex justify-space-between" cols="12" sm="7">
-          <VBtn depressed color="error"> Clear </VBtn>
+          <VBtn depressed color="error" @click="clearSelectors"> Clear </VBtn>
           <VBtn depressed color="primary" @click="sendAnswer"> Run </VBtn>
         </VCol>
       </VFlex>
@@ -198,10 +207,15 @@
 export default {
   name: "IndexTab",
   data: () => ({
-    if_answer: {
-      first_selector: "",
-      second_selector: "",
-      text_selector: "",
+    answer: {
+      if_first_selector: "",
+      if_second_selector: "",
+      if_text_selector: "",
+      then_character_count: 9,
+      then_separator_style: "/",
+      then_size: "",
+      then_color: "",
+      then_material: "",
     },
     if_second_text_selector_is_show: true,
     and_or_section_is_view: false,
@@ -232,6 +246,12 @@ export default {
       "is less or equal to",
     ],
     additional_selector: ["And", "Or", "None"],
+    then_selector_colors: [
+      "Black",
+      "Blue",
+      "White",
+      "Orange"
+    ],
     conditions: [
       [
         { action: "all", value: "foot" },
@@ -260,11 +280,8 @@ export default {
     ],
   }),
   methods: {
-    // doSmth() {
-    //   console.log("adwsdasd");
-    // },
     changeIfFirstSelectorValue(value) {
-      this.if_answer.first_selector = value;
+      this.answer.if_first_selector = value;
 
       if (value !== "All") {
         this.if_second_text_selector_is_show = true;
@@ -273,7 +290,7 @@ export default {
       }
     },
     sendAnswer() {
-      console.log(this.if_answer);
+      console.log(this.answer);
     },
     changeAdditionalSelectorValue(value) {
       console.log(value);
@@ -289,8 +306,31 @@ export default {
         this.and_or_section_text.title = "And";
         this.and_or_section_text.description = "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.";
       }
+    },
+    clearSelectors() {
+      this.and_or_section_is_view = false;
+
+      this.answer.if_first_selector = "",
+          this.answer.if_second_selector = "",
+          this.answer.if_text_selector = "",
+          this.answer.then_character_count = 9;
+      this.answer.then_separator_style = "/";
+      this.answer.then_size = "";
+      this.answer.then_color = "";
+      this.answer.then_material = "";
     }
   },
+  computed: {
+    thenAbbreviatedName() {
+      let arr = [];
+
+      this.then_selector_colors.forEach(item => {
+        arr.push(item.slice(0, this.answer.then_character_count));
+      });
+
+      return arr;
+    }
+  }
 };
 </script>
 
