@@ -15,7 +15,7 @@
         </VCol>
         <VSpacer />
         <VCol class="d-flex" cols="12" sm="7">
-          <VSheet class="content-section" :color="this.$vuetify.theme.dark ? 'dark':'white'" elevation="1" rounded>
+          <VSheet class="content-section" color="white" elevation="1" rounded>
             <VLayout class="flex-column">
               <VSelect
                   v-model="answer.if_first_selector"
@@ -48,22 +48,24 @@
                     :rules="rules"
                 />
               </VExpandTransition>
-              <VRow align="center">
-                <VCol cols="12" sm="6">
-                  <VSubheader v-text="'Additional condition'" />
-                </VCol>
-                <VCol cols="12" sm="6">
-                  <VSelect
-                      v-model="e6"
-                      :items="additional_selector"
-                      :menu-props="{ maxHeight: '400' }"
-                      label="Select"
-                      persistent-hint
-                      @select="additional_selector"
-                      @change="changeAdditionalSelectorValue"
-                  />
-                </VCol>
-              </VRow>
+              <VExpandTransition>
+                <VRow align="center" v-show="if_second_text_selector_is_show">
+                  <VCol cols="12" sm="6">
+                    <VSubheader v-text="'Additional condition'" />
+                  </VCol>
+                  <VCol cols="12" sm="6">
+                    <VSelect
+                        v-model="e6"
+                        :items="additional_selector"
+                        :menu-props="{ maxHeight: '400' }"
+                        label="Select"
+                        persistent-hint
+                        @select="additional_selector"
+                        @change="changeAdditionalSelectorValue"
+                    />
+                  </VCol>
+                </VRow>
+              </VExpandTransition>
             </VLayout>
           </VSheet>
         </VCol>
@@ -127,10 +129,10 @@
                 </VCol>
                 <VCol cols="12" sm="6">
                   <VSelect
+                      :items="[3, 4, 5, 6, 7, 8, 9]"
                       label="Select"
                       dense
                       outlined
-                      :items="[3, 4, 5, 6, 7, 8, 9]"
                       v-model="answer.then_character_count"
                   />
                 </VCol>
@@ -280,6 +282,9 @@ export default {
     ],
   }),
   methods: {
+    // doSmth() {
+    //   console.log("adwsdasd");
+    // },
     changeIfFirstSelectorValue(value) {
       this.answer.if_first_selector = value;
 
