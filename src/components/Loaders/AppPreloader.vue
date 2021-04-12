@@ -1,12 +1,10 @@
 <template>
-  <transition name="fade">
-    <div class="preloader">
-      <div class="spin">
-        <p>Processing data ...</p>
-      </div>
-    </div>
-
-  </transition>
+  <div class="preloader">
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+  </div>
 </template>
 
 <script>
@@ -15,15 +13,18 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
  .preloader {
    display: flex;
-   flex-direction: column;
-   align-items: center;
    justify-content: center;
-   position: absolute;
-   width: 100%;
-   height: 100%;
-   z-index: inherit;
+   align-items: center;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: 100vw;
+   background-color: lightgray;
+   z-index: 999;
  }
+
 </style>

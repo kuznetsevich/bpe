@@ -10,10 +10,9 @@
 
 <script>
 
-
-import AppIndex from '@/components/AppIndex';
-import AppFooter from '@/components/AppFooter';
-import Preloader from './components/Loaders/AppPreloader';
+/*import AppIndex from '@/components/AppIndex';
+import AppFooter from '@/components/AppFooter'; */
+import AppPreloader from './components/Loaders/AppPreloader';
 export default {
     name: 'App',
     components: { AppPreloader, AppIndex, AppFooter },
