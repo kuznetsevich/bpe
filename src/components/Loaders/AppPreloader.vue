@@ -9,6 +9,8 @@
 export default {
   name: 'Preloader'
 };
+
+
 </script>
 
 <style lang="scss" scoped>
