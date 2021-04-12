@@ -1,18 +1,18 @@
 <template>
   <VApp>
+    <AppPreloader />
     <VContainer class="container-custom-main">
-      <AppPreloader />
-      <!--<AppIndex />
-      <AppFooter /> -->
+      <AppIndex />
+      <AppFooter />
     </VContainer>
   </VApp>
 </template>
 
 <script>
 
-/*import AppIndex from '@/components/AppIndex';
-import AppFooter from '@/components/AppFooter'; */
 import AppPreloader from './components/Loaders/AppPreloader';
+import AppIndex from '@/components/AppIndex';
+import AppFooter from '@/components/AppFooter';
 export default {
     name: 'App',
     components: { AppPreloader, AppIndex, AppFooter },

@@ -1,15 +1,17 @@
 <template>
-  <div class="preloader">
-    <div class="cube"></div>
-    <div class="cube"></div>
-    <div class="cube"></div>
-    <div class="cube"></div>
-  </div>
+  <v-layout>
+    <div class="preloader">
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+    </div>
+  </v-layout>
 </template>
 
 <script>
 export default {
-  name: 'AppPreloader'
+  name: 'Preloader'
 };
 </script>
 
