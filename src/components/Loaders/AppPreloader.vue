@@ -1,12 +1,8 @@
 <template>
-  <v-layout>
     <div class="preloader">
-      <div class="cube"></div>
-      <div class="cube"></div>
-      <div class="cube"></div>
-      <div class="cube"></div>
+      <div class="loader"></div>
+      <p>Processing data...</p>
     </div>
-  </v-layout>
 </template>
 
 <script>
@@ -15,18 +11,65 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+
  .preloader {
    display: flex;
+   flex-direction: column;
    justify-content: center;
    align-items: center;
    position: fixed;
    top: 0;
    left: 0;
    width: 100vw;
-   height: 100vw;
-   background-color: lightgray;
-   z-index: 999;
+   height: 100vh;
+   background-color: white;
+   z-index: 9999;
+
+   .loader {
+     width: 48px;
+     height: 48px;
+     border-radius: 50%;
+     display: block;
+     margin:15px auto;
+     position: relative;
+     box-sizing: border-box;
+     animation: rotation 2s linear infinite;
+   }
+   .loader::after,
+   .loader::before {
+     content: '';
+     box-sizing: border-box;
+     position: absolute;
+     left: 0;
+     top: 0;
+     background: #FF3D00;
+     width: 20px;
+     height: 20px;
+     transform: translate(-50%, 50%);
+     border-radius: 50%;
+   }
+   .loader::before {
+     left: auto;
+     right: 0;
+     background: #1d05d6;
+     transform: translate(50%, 100%);
+   }
+
+   @keyframes rotation {
+     0% {
+       transform: rotate(0deg);
+     }
+     100% {
+       transform: rotate(360deg);
+     }
+   }
+
+    p {
+      font-family: Roboto, Montserrat;
+      font-weight: 400;
+      font-size: 21px;
+    }
  }
 
 </style>
