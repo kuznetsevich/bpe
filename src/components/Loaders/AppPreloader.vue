@@ -7,8 +7,24 @@
 
 <script>
 export default {
-  name: 'Preloader'
-
+  name: 'Preloader',
+  data (){
+    return {
+      percent: 100,
+      notes: "Completed",
+    };
+  },
+  created () {
+    setInterval(() => {
+      this.getState();
+    }, 1000);
+  },
+  methods: {
+    getState() {
+      this.percent = 20;
+      this.notes = "Collecting product data";
+    }
+  }
 };
 
 
@@ -68,11 +84,11 @@ export default {
      }
    }
 
-    p {
-      font-family: Roboto, Montserrat;
-      font-weight: 400;
-      font-size: 21px;
+    .loader_text {
       margin-top: 40px;
+      font-size: 21px;
+      font-weight: 400;
+      letter-spacing: .3px;
     }
  }
 
