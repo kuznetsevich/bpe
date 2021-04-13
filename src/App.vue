@@ -1,5 +1,6 @@
 <template>
   <VApp>
+    <AppPriceIndex />
     <AppPreloader />
     <VContainer class="container-custom-main">
       <AppIndex />
