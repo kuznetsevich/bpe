@@ -41,6 +41,7 @@
         md="3"
         lg="3"
       >
+        <Language />
         <ThemeModeSwitcher />
       </v-col>
     </v-layout>
@@ -77,9 +78,10 @@ import InstructionTab from '@/components/Tabs/InstructionTab';
 import TasksTab from '@/components/Tabs/TasksTab';
 import ThemeModeSwitcher from './Switcher/ThemeModeSwitcher';
 import UpdateTab from './Tabs/UpdateTab';
+import Language from "./Switcher/Language";
 export default {
     name: 'AppIndex',
-    components: { ThemeModeSwitcher, IndexTab, AdsTab, TasksTab, InstructionTab, UpdateTab },
+    components: {Language, ThemeModeSwitcher, IndexTab, AdsTab, TasksTab, InstructionTab, UpdateTab },
     data: () => ({
         tab: null,
     }),
