@@ -1,13 +1,14 @@
 <template>
     <div class="preloader">
       <div class="loader"></div>
-      <p>Processing data...</p>
+      <div class="loader_text">{{percent}}%. {{notes}}</div>
     </div>
 </template>
 
 <script>
 export default {
   name: 'Preloader'
+
 };
 
 
@@ -71,6 +72,7 @@ export default {
       font-family: Roboto, Montserrat;
       font-weight: 400;
       font-size: 21px;
+      margin-top: 40px;
     }
  }
 
