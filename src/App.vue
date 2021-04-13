@@ -1,6 +1,6 @@
 <template>
   <VApp>
-    <AppPreloader />
+    <!--<AppPreloader /> -->
     <VContainer class="container-custom-main">
       <AppIndex />
       <AppFooter />
