@@ -3,7 +3,7 @@
     <!-- IF -->
     <VLayout column>
       <VFlex d-flex xs12>
-        <VCol class="d-flex" cols="12" sm="4">
+        <VCol class="d-flex" cols="12" sm="6">
           <div class="if-notes">
             <h6 class="title">IF</h6>
             <p class="if-description caption">
@@ -14,7 +14,7 @@
           </div>
         </VCol>
         <VSpacer />
-        <VCol class="d-flex" cols="12" sm="7">
+        <VCol class="d-flex" cols="12" sm="6">
           <VSheet class="content-section" color="white" elevation="1" rounded>
             <VLayout class="flex-column">
               <VSelect

@@ -2,8 +2,7 @@
   <div class=" flag_wrap" mb-5тзь>
     <v-menu offset-y>
       <template v-slot:activator="{ on, attrs }">
-        <v-btn tile outlined color="success" v-bind="attrs" v-on="on">
-          <v-icon left>mdi-flag</v-icon>
+        <v-btn text color="success" v-bind="attrs" v-on="on" class="mx-1">
           {{ currentLang.code }}
         </v-btn>
       </template>

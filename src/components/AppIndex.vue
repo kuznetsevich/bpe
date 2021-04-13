@@ -2,10 +2,10 @@
   <div class="tab_wrapper">
     <v-layout class="d-flex align-center">
       <v-col
-        cols="9"
-        sm="9"
-        md="9"
-        lg="9"
+        cols="8"
+        sm="8"
+        md="8"
+        lg="8"
       >
         <VTabs
           v-model="tab"
@@ -25,21 +25,13 @@
           <VTab href="#add_app_tab">
             Other apps
           </VTab>
-          <VTab icon href="#update_app_tab">
-            <v-badge
-              color="pink"
-              dot
-            >
-              <v-icon>mdi-bell-outline</v-icon>
-            </v-badge>
-          </VTab>
         </VTabs>
       </v-col>
-      <v-col
-        cols="3"
-        sm="3"
-        md="3"
-        lg="3"
+      <v-col class="navi_switchers"
+        cols="4"
+        sm="4"
+        md="4"
+        lg="4"
       >
         <Language />
         <ThemeModeSwitcher />
@@ -110,5 +102,10 @@ export default {
     }
     .tab_wrapper {
 
+    }
+    .navi_switchers {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
     }
 </style>
