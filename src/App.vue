@@ -1,7 +1,7 @@
 <template>
   <VApp>
     <AppPriceIndex />
-    <AppPreloader />
+    <!--<AppPreloader />-->
     <VContainer class="container-custom-main">
       <AppIndex />
       <AppFooter />
@@ -10,13 +10,12 @@
 </template>
 
 <script>
-
-import AppPreloader from './components/Loaders/AppPreloader';
+import AppPriceIndex from '@/components/Price/AppPriceIndex';
 import AppIndex from '@/components/AppIndex';
 import AppFooter from '@/components/AppFooter';
 export default {
     name: 'App',
-    components: { AppPreloader, AppIndex, AppFooter },
+    components: { AppPriceIndex, AppIndex, AppFooter },
     data (){
         return {
         //
