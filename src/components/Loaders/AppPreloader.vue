@@ -22,7 +22,7 @@ export default {
   methods: {
     getState() {
       this.percent = 20;
-      this.notes = "Collecting product data";
+      this.notes = "Collecting product data ...";
     }
   }
 };
